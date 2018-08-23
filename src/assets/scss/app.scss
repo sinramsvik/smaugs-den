@@ -1,0 +1,41 @@
+@import "typography";
+@import "node_modules/bulma/bulma";
+@import "variables";
+
+
+html {
+  background-color: $background;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  white-space: nowrap;
+}
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+p {
+  font-size: $primary-f-size;
+} 
+hr {
+  background-color: $secondary;
+  height: 1px;
+}
+a {
+  color: $text-link;
+}
+
+// CLASSES
+
+.headfont {
+  font-size: 12px;
+  margin-bottom: 26px;
+}
+.aboutfont {
+  font-size: 26px;
+  margin-bottom: 16px;
+}
