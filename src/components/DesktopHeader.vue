@@ -1,12 +1,12 @@
 <template>
-  <header class="spacer-s">
+  <div class="spacer-s">
     <div class="columns is-mobile" v-for="(entry,index) in entries" :key="index">
-      <div class="column is-9-desktop is-6-tablet">
+      <div class="column is-8-tablet is-9-desktop">
         <h2>{{ entry.fields.aboutAltTwo }}</h2>
       </div>
       <social class="column"></social>
     </div>
-  </header>
+  </div>
 </template>
 
 <script>
@@ -15,7 +15,8 @@ export default {
   components: { Social },
   data () {
     return {
-      entries: null
+      entries: null,
+      isActive: false
     }
   },
   created () {
@@ -43,9 +44,6 @@ export default {
   h2 {
     font-size: 12px;
     margin-top: 5px;
-  }
-  .marginbottom {
-    margin-bottom: 58px;
   }
 </style>
 

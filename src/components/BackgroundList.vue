@@ -1,9 +1,9 @@
 <template>
-  <section>
+  <section class="is-hidden-mobile">
     <list-title></list-title>
     <div class="columns is-multiline is-mobile">
-      <background-clients class="column is-2-desktop is-4-tablet is-6-mobile" @hover="setProject" v-for="(entry,index) in entries" :key="index" :index="index" :client="entry.fields.client"></background-clients>
-        <div v-if="project" class="align align-mobile align-tablet align-desktop">
+      <background-clients class="column is-2-desktop is-3-tablet" @hover="setProject" v-for="(entry,index) in entries" :key="index" :index="index" :client="entry.fields.client"></background-clients>
+        <div class="back-img" v-if="project">
           <img v-if="project.fields.photo" :src="project.fields.photo[0].url">
         </div>
     </div>
@@ -52,24 +52,30 @@ export default {
   img {
     opacity: 0.5;
   }
-  .align {
+  .back-img {
     z-index: -1;
     position: absolute;
   }
   @media only screen and (min-width: 300px) {
-    .align-mobile {
+    .back-img {
       left: 10%;
       width: 80%;
     }
   }
   @media only screen and (min-width: 769px) {
-    .align-tablet {
+    .back-img {
       left: 15%;
       width: 66%;
     }
   } 
   @media only screen and (min-width: 1024px) {
-    .align-desktop {
+    .back-img {
+      left: 25%;
+      width: 50%;
+    }
+  }
+  @media only screen and (min-width: 1216px) {
+    .back-img {
       left: 33%;
       width: 33%;
     }

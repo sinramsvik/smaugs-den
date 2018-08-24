@@ -1,10 +1,8 @@
 <template>
-  <div class="pad">
-    <div class="columns is-mobile">
-      <div class="column" v-for="(entry,index) in entries" :key="index">
-        <a :href="entry.fields.socialUrl">{{ entry.fields.social }}</a>
-      </div>
-    </div>
+  <div>
+    <span v-for="(entry, index) in entries" :key="index">
+      <a :href="entry.fields.socialUrl">{{ entry.fields.social }}</a>
+    </span>
   </div>
 </template>
 
@@ -39,6 +37,7 @@ export default {
   a {
     font-size: 12px;
     text-decoration-line: underline;
+    margin-left: 24px;
   }
 
 </style>
