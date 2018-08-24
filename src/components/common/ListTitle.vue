@@ -13,11 +13,6 @@ export default {
      entries: null
    }
  },
-
-  watch: {
-    currentPage: 'fetchData'
-  },
-
   created () {
     this.fetchData()
   },
@@ -41,7 +36,7 @@ export default {
 
   .aboutalt {
     font-size: 12px;
-    margin-bottom: 26px;
+    margin-bottom: 36px;
   }
 
 </style>

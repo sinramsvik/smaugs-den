@@ -1,51 +1,59 @@
 <template>
-  <div @click="toggle">
-    <span class="number">{{ number }}</span>
-    <h1>{{ client }}</h1>
-    <h2>{{ description }}</h2>
-  </div>
+  <section class="rows spacer">
+    <div class="row columns is-multiline">
+      <div class="column is-12">
+        <accordion v-for="(entry,index) in entries" :key="index" :number="entry.fields.number" :client="entry.fields.caseName" :description="entry.fields.description">
+          <div class="column is-12 columns is-multiline">
+            <div class="column is-8">
+              <p>{{ entry.fields.caseText }}</p>
+              <p>{{ entry.fields.caseTextTwo }}</p>
+            </div>
+            <div class="column is-12" v-for="(photos,index) in entry.fields.photo" :key="index">
+              <img :src="photos.url" />
+            </div>
+          </div>
+        </accordion>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
+import Accordion from './Accordion.vue'
 export default {
-  props: {
-    index: Number,
-    number: Number,
-    client: String,
-    description: String
-  },
+  components: { Accordion },
   data () {
     return {
-      open: false
+      entries: null
     }
   },
+
+  created () {
+    this.fetchData()
+  },
+
   methods: {
-    toggle () {
-      this.$emit('click', { index: this.index })
-      this.open = true
+    fetchData() {
+      let xhr = new XMLHttpRequest()
+      let self = this
+      xhr.open('GET','https://api.airtable.com/v0/appudoYlR0W35iwUx/casestudies?api_key=keyNazOMJHA5IFSJw')
+      xhr.onload = function () {
+        let response = JSON.parse(xhr.responseText)
+        self.entries = response.records
+      }
+      xhr.send()
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  @import "../assets/scss/variables.scss";
 
-  h1 {
-    display: inline-block;
-    font-size: 26px;
+  img {
+    margin-top: 42px;
   }
-  h2 {
-    color: $subtext-gray;
-    margin-bottom: 36px;
-  }
-  .number {
-    color: $subtext-gray;
-    font-size: 12px;
-    margin-top: 5px;
-    margin-left: -32px;
-    margin-right: 0px;
+  p {
+    font-size: 22px;
+    margin-bottom: 26px;
   }
 </style>
-
-

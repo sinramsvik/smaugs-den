@@ -24,11 +24,6 @@ export default {
       project: null
     }
   },
-
-  watch: {
-    currentPage: 'fetchData'
-  },
-
   created () {
     this.fetchData()
   },

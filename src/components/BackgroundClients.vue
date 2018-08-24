@@ -30,6 +30,7 @@ export default {
     font-size: 12px;
     &:hover {
       background-color: #eaeaea;
+      opacity: 0.5;
       border-radius: 4px;
     }
   }

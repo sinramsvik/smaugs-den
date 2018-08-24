@@ -13,11 +13,6 @@ export default {
       entries: null
     }
   },
-
-  watch: {
-    currentPage: 'fetchData'
-  },
-
   created () {
     this.fetchData()
   },

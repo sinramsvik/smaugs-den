@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="margins">
     <desktop-header></desktop-header>
-    <cases class="spacer"></cases>
+    <case-studies></case-studies>
     <about></about>
     <background-list></background-list>
   </div>
@@ -9,14 +9,14 @@
 
 <script>
 import DesktopHeader from './components/DesktopHeader.vue'
-import Cases from './components/Cases.vue'
+import CaseStudies from './components/CaseStudies.vue'
 import About from './components/About.vue'
 import BackgroundList from './components/BackgroundList.vue'
 export default {
   name: 'app',
   components: {
     DesktopHeader,
-    Cases,
+    CaseStudies,
     About,
     BackgroundList
   },
