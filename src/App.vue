@@ -30,9 +30,13 @@ export default {
 
 <style lang="scss">
   @import '/assets/scss/app';
-
-  .margins {
-    margin: 55px 80px;
+    .margins {
+      margin: 32px;
+    }
+  @media only screen and (min-width: 769px) {
+    .margins {
+      margin: 3% 6%;
+    }
   }
 </style>
 
