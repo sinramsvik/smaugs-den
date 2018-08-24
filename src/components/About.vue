@@ -1,12 +1,13 @@
 <template>
-  <section class="rows columns is-multiline">
-    <div class="row column is-8" v-for="(entry,index) in entries" :key="index">
-      <h2 class="headfont">{{ entry.fields.header }}</h2>
-      <p class="row aboutfont">{{ entry.fields.about }}</p>
-      <p class="row aboutfont">{{ entry.fields.aboutAlt }}</p>
+  <section class="spacer-s spacer-m">
+    <div class="rows columns is-multiline">
+      <div class="row column is-8-desktop is-10-tablet is-12-mobile" v-for="(entry,index) in entries" :key="index">
+        <h2 class="headfont">{{ entry.fields.header }}</h2>
+        <p class="row text-mobile text-desktop">{{ entry.fields.about }}</p>
+        <p class="row text-mobile text-desktop">{{ entry.fields.aboutAlt }}</p>
+      </div>
     </div>
-    <div class="column is-12 space"></div>
-  </section>
+  </section>  
 </template>
 
 <script>
@@ -36,10 +37,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/scss/variables.scss";
-
-.space {
-  height: 144px;
-}
 
 </style>

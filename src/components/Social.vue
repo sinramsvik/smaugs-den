@@ -1,7 +1,9 @@
 <template>
-  <div class="columns is-mobile">
-    <div class="column" v-for="(entry,index) in entries" :key="index">
-      <a :href="entry.fields.socialUrl">{{ entry.fields.social }}</a>
+  <div class="pad">
+    <div class="columns is-mobile">
+      <div class="column" v-for="(entry,index) in entries" :key="index">
+        <a :href="entry.fields.socialUrl">{{ entry.fields.social }}</a>
+      </div>
     </div>
   </div>
 </template>

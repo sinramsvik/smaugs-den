@@ -1,10 +1,10 @@
 <template>
-  <header class="rows">
-    <div class="row columns" v-for="(entry,index) in entries" :key="index">
-      <div class="column is-9 marginbottom">
+  <header class="spacer-s">
+    <div class="columns is-mobile" v-for="(entry,index) in entries" :key="index">
+      <div class="column is-9-desktop is-6-tablet">
         <h2>{{ entry.fields.aboutAltTwo }}</h2>
       </div>
-      <social></social>
+      <social class="column"></social>
     </div>
   </header>
 </template>
@@ -42,6 +42,7 @@ export default {
 
   h2 {
     font-size: 12px;
+    margin-top: 5px;
   }
   .marginbottom {
     margin-bottom: 58px;

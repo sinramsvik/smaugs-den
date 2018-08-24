@@ -31,9 +31,19 @@ export default {
     display: inline-block;
     font-size: 26px;
   }
-  h2 {
-    color: $subtext-gray;
-    margin-bottom: 36px;
+  @media only screen and (min-width: 300px) {
+    h2 {
+      color: $subtext-gray;
+      font-size: 12px;
+      white-space: normal;
+      margin-bottom: 36px;
+    }
+  }
+  @media only screen and (min-width: 769px) {
+    h2 {
+      margin-bottom: 36px;
+      font-size: 100%;
+    }
   }
   .number {
     color: $subtext-gray;

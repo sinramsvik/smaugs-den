@@ -34,8 +34,5 @@ export default {
   .margins {
     margin: 55px 80px;
   }
-  .spacer {
-    margin-bottom: 144px;
-  }
 </style>
 

@@ -1,9 +1,9 @@
 <template>
   <section>
     <list-title></list-title>
-    <div class="columns is-multiline">
-      <background-clients class="column is-2-desktop is-3 is-4" @hover="setProject" v-for="(entry,index) in entries" :key="index" :index="index" :client="entry.fields.client"></background-clients>
-        <div v-if="project" class="align">
+    <div class="columns is-multiline is-mobile">
+      <background-clients class="column is-2-desktop is-4-tablet is-6-mobile" @hover="setProject" v-for="(entry,index) in entries" :key="index" :index="index" :client="entry.fields.client"></background-clients>
+        <div v-if="project" class="align align-mobile align-tablet align-desktop">
           <img v-if="project.fields.photo" :src="project.fields.photo[0].url">
         </div>
     </div>
@@ -55,7 +55,23 @@ export default {
   .align {
     z-index: -1;
     position: absolute;
-    left: 33%;
-    width: 520px;
+  }
+  @media only screen and (min-width: 300px) {
+    .align-mobile {
+      left: 10%;
+      width: 80%;
+    }
+  }
+  @media only screen and (min-width: 769px) {
+    .align-tablet {
+      left: 15%;
+      width: 66%;
+    }
+  } 
+  @media only screen and (min-width: 1024px) {
+    .align-desktop {
+      left: 33%;
+      width: 33%;
+    }
   }
 </style>
